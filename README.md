@@ -1,8 +1,14 @@
-# Surge Meta 分流规则
+# Surge 分流规则
 
-用于 Surge 的 Meta `RULE-SET`。覆盖 Muse、Meta AI、Llama、Facebook、Instagram、Messenger、WhatsApp、Threads、Meta Quest 和常用媒体域名。每条 `DOMAIN-SUFFIX` 同时匹配域名本身及其子域名，例如 `muse.ai` 和 `security.muse.ai`。
+每个规则集都可以在 Surge 中通过 `RULE-SET` 单独订阅，并绑定到自己的策略组。规则文件放在 `rule/Surge/<名称>/<名称>.list`。
 
-## 添加到 Surge
+## 规则集
+
+| 规则集 | 覆盖范围 |
+| --- | --- |
+| [Meta.list](rule/Surge/Meta/Meta.list) | Muse、Meta AI、Llama、Facebook、Instagram、Messenger、WhatsApp、Threads、Meta Quest 和常用媒体域名 |
+
+## 在 Surge 中添加 Meta 规则集
 
 将以下两行分别加入现有配置的 `[Proxy Group]` 和 `[Rule]` 段。把 `Proxy` 换成配置里已有的代理策略或策略组名称。保存后，在 Surge 的 `Meta` 策略组里选择出站策略。
 
@@ -11,7 +17,7 @@
 Meta = select, Proxy, DIRECT
 
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-meta-rules/main/rule/Surge/Meta/Meta.list,Meta
+RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-rules/main/rule/Surge/Meta/Meta.list,Meta
 ```
 
 Surge 从上到下采用第一条命中的规则。把 Meta 规则放在已有且可能先匹配同一流量的 Facebook、Instagram、WhatsApp 或综合代理规则之前，并放在 `FINAL` 之前。[Surge 规则匹配顺序](https://manual.nssurge.com/rules/overview.html)
@@ -20,7 +26,7 @@ Surge 从上到下采用第一条命中的规则。把 Meta 规则放在已有�
 
 ## 范围与维护
 
-规则按目标域名匹配。仅以 IP 地址发起、且 Surge 无法关联到域名的连接由配置中的后续规则处理。Threads 同时保留 `threads.com` 和 `threads.net`，以覆盖现有和旧链接。
+Meta 规则使用 `DOMAIN-SUFFIX`，每条规则同时匹配域名本身及其子域名，例如 `muse.ai` 和 `security.muse.ai`。仅以 IP 地址发起、且 Surge 无法关联到域名的连接由配置中的后续规则处理。Threads 同时保留 `threads.com` 和 `threads.net`，以覆盖现有和旧链接。
 
 新增域名时，在 [Meta.list](rule/Surge/Meta/Meta.list) 的对应小节添加一行 `DOMAIN-SUFFIX,example.com`，并更新文件头的日期和规则条数。
 
