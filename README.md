@@ -10,6 +10,7 @@
 | [OpenAI.list](rule/Surge/OpenAI/OpenAI.list) | ChatGPT、Codex、OpenAI API、登录、实时连接和附件 |
 | [Claude.list](rule/Surge/Claude/Claude.list) | Claude 网页端、桌面端、Claude Code、Anthropic API、登录和更新 |
 | [Google.list](rule/Surge/Google/Google.list) | Google 搜索、Workspace、YouTube、Play、Google Cloud、Firebase、Gemini、AI Studio 和 Gemini CLI |
+| [Microsoft.list](rule/Surge/Microsoft/Microsoft.list) | Microsoft 365、OneDrive、Copilot、Outlook、Teams、Windows、Edge、Azure、VS Code 和 Xbox |
 
 ## 在 Surge 中添加 Meta 规则集
 
@@ -59,6 +60,16 @@ RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-rules/main/rule/Surge/G
 
 Google Cloud 和 Firebase 的平台域名（如 `run.app`、`web.app`）包含客户部署的应用。规则集按域名匹配，并保留少量带 `no-resolve` 的 Google IP 段，以覆盖直接连接这些 IP 的请求。[Google Cloud 域名文档](https://docs.cloud.google.com/vpc/docs/access-apis-external-ip) · [Firebase 项目域名](https://firebase.google.com/docs/projects/learn-more)
 
+## 在 Surge 中添加 Microsoft 规则集
+
+在现有配置的 `[Rule]` 段加入以下一行，并使用已有的 `Microsoft` 策略组。Surge 按规则顺序匹配。如果通用直连规则先命中 `1drv.ms`、`sfx.ms` 或 `svc.ms`，可以在通用规则前为这些域名指定 `Microsoft` 策略。
+
+```ini
+RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-rules/main/rule/Surge/Microsoft/Microsoft.list,Microsoft
+```
+
+规则覆盖个人 Copilot 的 `copilot.com`、Microsoft 365 的 `cloud.microsoft`、OneDrive 个人版与企业版的登录、同步和分享，以及世纪互联版 Microsoft 365 的服务域名。GitHub 和 GitHub Copilot 使用各自的规则，纯 IP 流量按配置中的 IP 规则处理。[Microsoft 365 端点](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges) · [世纪互联端点](https://learn.microsoft.com/zh-cn/microsoft-365/enterprise/urls-and-ip-address-ranges-21vianet) · [OneDrive 网络要求](https://learn.microsoft.com/sharepoint/required-urls-and-ports) · [Copilot 网络要求](https://learn.microsoft.com/en-us/copilot/plan/microsoft-copilot-requirements)
+
 ## 规则维护
 
 Meta 规则使用 `DOMAIN-SUFFIX`，每条规则同时匹配域名本身及其子域名，例如 `muse.ai` 和 `security.muse.ai`。仅以 IP 地址发起、且 Surge 无法关联到域名的连接由配置中的后续规则处理。Threads 同时保留 `threads.com` 和 `threads.net`，以覆盖现有和旧链接。
@@ -74,4 +85,5 @@ Meta 规则使用 `DOMAIN-SUFFIX`，每条规则同时匹配域名本身及其�
 - Codex 的生产后端及登录入口。[Codex 源代码](https://github.com/openai/codex/blob/main/codex-rs/login/src/auth/workload_identity.rs) · [Codex 登录实现](https://github.com/openai/codex/blob/main/codex-rs/login/src/server.rs)
 - OpenAI 专用 CDN 和 Azure 端点参考。[blackmatrix7 的 Surge OpenAI 规则](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/OpenAI)
 - Google 和 YouTube 的域名基于 V2Fly 的 MIT 许可数据，来源版本和许可文本随规则文件保留。搜索地区域名和保留的 IP 段使用 Google 公布的数据。[V2Fly Google 数据](https://github.com/v2fly/domain-list-community/tree/93d681debd7abdf1c08c3b3891ca1d7da657ea23/data) · [Google 搜索地区域名](https://www.google.com/supported_domains) · [Google IP 段](https://www.gstatic.com/ipranges/goog.json)
+- Microsoft 域名基于 Microsoft 365 端点服务和 V2Fly 的 MIT 许可数据，来源版本和许可文本随规则文件保留。[Microsoft 365 端点服务](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service) · [V2Fly Microsoft 数据](https://github.com/v2fly/domain-list-community/blob/93d681debd7abdf1c08c3b3891ca1d7da657ea23/data/microsoft)
 - 规则文件格式参考。[blackmatrix7 的 Surge Facebook 规则](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Facebook)
