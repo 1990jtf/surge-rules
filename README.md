@@ -11,6 +11,8 @@
 | [Claude.list](rule/Surge/Claude/Claude.list) | Claude 网页端、桌面端、Claude Code、Anthropic API、登录和更新 |
 | [Google.list](rule/Surge/Google/Google.list) | Google 搜索、Workspace、YouTube、Play、Google Cloud、Firebase、Gemini、AI Studio 和 Gemini CLI |
 | [Microsoft.list](rule/Surge/Microsoft/Microsoft.list) | Microsoft 365、OneDrive、Copilot、Outlook、Teams、Windows、Edge、Azure、VS Code 和 Xbox |
+| [UniFi.list](rule/Surge/UniFi/UniFi.list) | UniFi Site Manager、`ui.com`、`ubnt.com` 和 Ubiquiti 云端远程管理 |
+| [Crypto.list](rule/Surge/Crypto/Crypto.list) | Binance、OKX、Bitget、Coinbase、Kraken 等交易所，以及 CoinMarketCap 等行情和资讯站 |
 
 ## 在 Surge 中添加 Meta 规则集
 
@@ -69,6 +71,22 @@ RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-rules/main/rule/Surge/M
 ```
 
 规则覆盖个人 Copilot 的 `copilot.com`、Microsoft 365 的 `cloud.microsoft`、OneDrive 个人版与企业版的登录、同步和分享，以及世纪互联版 Microsoft 365 的服务域名。GitHub 和 GitHub Copilot 使用各自的规则，纯 IP 流量按配置中的 IP 规则处理。[Microsoft 365 端点](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges) · [世纪互联端点](https://learn.microsoft.com/zh-cn/microsoft-365/enterprise/urls-and-ip-address-ranges-21vianet) · [OneDrive 网络要求](https://learn.microsoft.com/sharepoint/required-urls-and-ports) · [Copilot 网络要求](https://learn.microsoft.com/en-us/copilot/plan/microsoft-copilot-requirements)
+
+## 在 Surge 中添加 UniFi 规则集
+
+在现有配置的 `[Rule]` 段加入以下一行，并使用已有的 `UniFi` 策略组。`ui.com` 同时覆盖 `unifi.ui.com`。列表里有 `.cn` 域名，这条规则要放在 `DOMAIN-SUFFIX,cn` 直连规则之前。`ui.direct` 是局域网设备名，不要放进这个规则集。
+
+```ini
+RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-rules/main/rule/Surge/UniFi/UniFi.list,UniFi
+```
+
+## 在 Surge 中添加 Crypto 规则集
+
+在现有配置的 `[Rule]` 段加入以下一行，并使用已有的 `Crypto` 策略组。一个规则集同时覆盖交易所、行情站和常见资讯站。
+
+```ini
+RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-rules/main/rule/Surge/Crypto/Crypto.list,Crypto
+```
 
 ## 规则维护
 

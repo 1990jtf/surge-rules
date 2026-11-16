@@ -1,0 +1,15 @@
+# NAME: UniFi
+# REPO: https://github.com/1990jtf/surge-rules
+# UPDATED: 2026-11-16
+# DOMAIN-SUFFIX: 7
+# TOTAL: 7
+
+# UniFi Site Manager and Ubiquiti cloud. unifi.ui.com is covered by ui.com.
+# ui.direct is a LAN device name and is intentionally omitted.
+DOMAIN-SUFFIX,ui.com
+DOMAIN-SUFFIX,ui.com.cn
+DOMAIN-SUFFIX,ubnt.com
+DOMAIN-SUFFIX,ubnt.com.cn
+DOMAIN-SUFFIX,ubncloud.com
+DOMAIN-SUFFIX,uisp.com
+DOMAIN-SUFFIX,wifiman.com
