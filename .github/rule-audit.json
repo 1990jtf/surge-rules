@@ -1,0 +1,69 @@
+{
+  "baseline": {
+    "rabbit": "284920ce3a4333fee0b884fd9d80814d36305d7e",
+    "v2fly": "93d681debd7abdf1c08c3b3891ca1d7da657ea23"
+  },
+  "official_sources": {
+    "Meta": [
+      "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "https://muse.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse",
+      "https://about.fb.com/news/2025/04/new-features-threads-web-experience/",
+      "https://developers.meta.com/vr/documentation/web/web-launch/",
+      "https://faq.whatsapp.com/852892549070029/"
+    ],
+    "OpenAI": [
+      "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+      "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites",
+      "https://openai.com/policies/chatgpt-sites-terms/",
+      "https://developers.openai.com/codex/auth/",
+      "https://raw.githubusercontent.com/openai/codex/main/codex-rs/login/src/server.rs"
+    ],
+    "Claude": [
+      "https://code.claude.com/docs/en/network-config.md",
+      "https://code.claude.com/docs/en/desktop.md",
+      "https://platform.claude.com/docs/en/api/overview.md",
+      "https://academy.claude.com/products/code"
+    ],
+    "Google": [
+      "https://www.google.com/supported_domains",
+      "https://ai.google.dev/gemini-api/docs/ai-studio-quickstart",
+      "https://ai.google.dev/gemini-api/docs/aistudio-deploying",
+      "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+      "https://firebase.google.com/docs/projects/learn-more",
+      "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/core/src/code_assist/server.ts"
+    ],
+    "Microsoft": [
+      "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
+      "https://learn.microsoft.com/sharepoint/required-urls-and-ports",
+      "https://learn.microsoft.com/en-us/copilot/plan/add-copilot-endpoints-allowlist",
+      "https://learn.microsoft.com/en-us/entra/identity/app-proxy/how-to-configure-custom-domain"
+    ]
+  },
+  "shared_suffixes": [
+    "akamai.net",
+    "akamaiedge.net",
+    "akamaihd.net",
+    "akamaized.net",
+    "amazonaws.com",
+    "auth0.com",
+    "azureedge.net",
+    "azurefd.net",
+    "blob.core.windows.net",
+    "cloudflare.com",
+    "cloudfront.net",
+    "datadoghq.com",
+    "github.com",
+    "githubcopilot.com",
+    "githubusercontent.com",
+    "intercom.io",
+    "intercomcdn.com",
+    "livekit.cloud",
+    "npmjs.org",
+    "paypal.com",
+    "sendgrid.net",
+    "sentry.io",
+    "stripe.com",
+    "workos.com",
+    "workoscdn.com"
+  ]
+}

@@ -88,6 +88,14 @@ Meta 规则使用 `DOMAIN-SUFFIX`，每条规则同时匹配域名本身及其�
 | Google | `cdn.ampproject.org` 是 Google AMP 缓存使用的后缀，`www.chromeexperiments.com` 转到 Google 的 Chrome Experiments 集合。[Google AMP Cache 文档](https://developers.google.com/amp/cache/use-amp-url) · [Google Chrome Experiments](https://experiments.withgoogle.com/chrome-experiment-1000) |
 | Microsoft | `msappproxy.net` 是 Entra 应用代理的默认域名，`groupme.com` 是 GroupMe 的 Web 登录入口。[Microsoft Entra 文档](https://learn.microsoft.com/en-us/entra/identity/app-proxy/how-to-configure-custom-domain) · [GroupMe 支持](https://support.microsoft.com/en-us/groupme/groupme-log-in-issues) |
 
+### 每周自动复核
+
+[Weekly Surge rule audit](https://github.com/1990jtf/surge-rules/actions/workflows/rule-audit.yml) 每周一北京时间 09:20 运行，也可在 Actions 页面手动运行。工作流以上次已复核的 Rabbit-Spec 和 V2Fly 提交为起点，对照仓库的五套规则集，检查新出现且尚未覆盖的域名。第一次运行使用上述 2026-11-16 复核版本作为基线。
+
+发现候选时，工作流创建或更新待审的草稿 PR，按服务列出规则、上游版本链接、厂商依据和处理建议。PR 正文显示概览，完整记录见其中的 `audit/latest.md`。厂商资料明确列出的主机名可进入规则差异。增加后缀规则还需有明确的通配符依据。共享基础设施、归属冲突和缺少官方依据的域名留在报告中人工判断。Rabbit-Spec 的 AIGC 清单结合 V2Fly 或厂商资料归入 OpenAI 或 Claude。检查范围为域名规则。
+
+草稿 PR 由维护者确认、标记为可审阅并合并。合并后才推进复核基线和发布其中的规则变更。没有新候选时，运行结果只记录在 Actions 摘要。
+
 ## 参考
 
 - Muse 入口与官方子域名。[Meta 发布公告](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)

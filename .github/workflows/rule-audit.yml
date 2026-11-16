@@ -1,0 +1,37 @@
+name: Weekly Surge rule audit
+
+on:
+  schedule:
+    - cron: '20 9 * * 1'
+      timezone: Asia/Shanghai
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: weekly-surge-rule-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Compare upstream rules and gather evidence
+        id: audit
+        run: python3 .github/audit_rules.py "$RUNNER_TEMP/surge-rule-audit"
+
+      - name: Publish a draft pull request
+        if: steps.audit.outputs.has_candidates == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: bash .github/publish_rule_audit.sh "$RUNNER_TEMP/surge-rule-audit"
