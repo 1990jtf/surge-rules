@@ -76,6 +76,18 @@ Meta 规则使用 `DOMAIN-SUFFIX`，每条规则同时匹配域名本身及其�
 
 新增域名时，在对应规则文件中使用 `DOMAIN` 匹配单个主机名，或使用 `DOMAIN-SUFFIX` 匹配域名及其子域名，并更新文件头的日期和规则条数。
 
+### 五套规则的域名复核
+
+2026-11-16 以 Rabbit-Spec 和 V2Fly 的规则查找缺项，再用厂商资料核实域名用途。接入第三方基础设施的服务使用已核实的具体主机名或专用后缀。[Rabbit-Spec 对照版本](https://github.com/Rabbit-Spec/Surge/tree/284920ce3a4333fee0b884fd9d80814d36305d7e/Rules) · [V2Fly 对照版本](https://github.com/v2fly/domain-list-community/tree/93d681debd7abdf1c08c3b3891ca1d7da657ea23/data)
+
+| 规则集 | 本次补充与核实依据 |
+| --- | --- |
+| Meta | `metaaiusercontent.com` 由 Meta 提交至公共后缀列表。Meta 的安全说明描述了 Muse 客户端与专用虚拟机的连接，Meta 签名的 macOS 客户端使用 `hatch.metaaivm.com`。[Meta 的公共后缀登记](https://publicsuffix.org/list/public_suffix_list.dat) · [Muse 安全架构](https://security.muse.ai/) |
+| OpenAI | `chatgpt.site` 用于 ChatGPT Sites。官方开发文档中的 Azure 资源使用 `openaiassets.blob.core.windows.net`，该端点按全主机名匹配。[ChatGPT Sites 官方说明](https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites) · [OpenAI Cookbook 资源引用](https://github.com/openai/openai-cookbook/blob/main/examples/data/oai_docs/optimizing-llm-accuracy.txt) |
+| Claude | `claude.dev` 是 Claude Academy 指向的官方开发者博客。[Claude Academy](https://academy.claude.com/products/code) |
+| Google | `cdn.ampproject.org` 是 Google AMP 缓存使用的后缀，`www.chromeexperiments.com` 转到 Google 的 Chrome Experiments 集合。[Google AMP Cache 文档](https://developers.google.com/amp/cache/use-amp-url) · [Google Chrome Experiments](https://experiments.withgoogle.com/chrome-experiment-1000) |
+| Microsoft | `msappproxy.net` 是 Entra 应用代理的默认域名，`groupme.com` 是 GroupMe 的 Web 登录入口。[Microsoft Entra 文档](https://learn.microsoft.com/en-us/entra/identity/app-proxy/how-to-configure-custom-domain) · [GroupMe 支持](https://support.microsoft.com/en-us/groupme/groupme-log-in-issues) |
+
 ## 参考
 
 - Muse 入口与官方子域名。[Meta 发布公告](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)

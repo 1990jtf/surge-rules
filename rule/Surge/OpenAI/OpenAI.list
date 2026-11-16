@@ -1,13 +1,14 @@
 # NAME: OpenAI
 # REPO: https://github.com/1990jtf/surge-rules
 # UPDATED: 2026-11-16
-# DOMAIN: 13
-# DOMAIN-SUFFIX: 5
-# TOTAL: 18
+# DOMAIN: 14
+# DOMAIN-SUFFIX: 6
+# TOTAL: 20
 
 # ChatGPT, Codex, authentication and OpenAI API
 # chatgpt.com also covers Codex streaming and ws.chatgpt.com.
 DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chatgpt.site
 DOMAIN-SUFFIX,openai.com
 DOMAIN,chat.com
 DOMAIN,www.chat.com
@@ -21,6 +22,7 @@ DOMAIN,cdn.openaimerge.com
 # OpenAI-specific hosts on third-party infrastructure
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,openaiassets.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,openaicom.imgix.net

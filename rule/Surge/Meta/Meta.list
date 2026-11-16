@@ -1,14 +1,16 @@
 # NAME: Meta
 # REPO: https://github.com/1990jtf/surge-rules
 # UPDATED: 2026-11-16
-# DOMAIN-SUFFIX: 27
-# TOTAL: 27
+# DOMAIN-SUFFIX: 29
+# TOTAL: 29
 
 # Meta, Muse, Meta AI and Llama
 DOMAIN-SUFFIX,meta.com
 DOMAIN-SUFFIX,atmeta.com
 DOMAIN-SUFFIX,muse.ai
 DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,metaaiusercontent.com
+DOMAIN-SUFFIX,metaaivm.com
 DOMAIN-SUFFIX,llama.com
 
 # Facebook and Meta CDN

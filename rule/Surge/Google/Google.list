@@ -4,11 +4,11 @@
 # DOMAIN SOURCE: https://github.com/v2fly/domain-list-community/tree/93d681debd7abdf1c08c3b3891ca1d7da657ea23/data
 # SEARCH DOMAINS: https://www.google.com/supported_domains
 # IP SOURCE: https://www.gstatic.com/ipranges/goog.json
-# DOMAIN: 19
-# DOMAIN-SUFFIX: 837
+# DOMAIN: 20
+# DOMAIN-SUFFIX: 838
 # IP-CIDR: 4
 # IP-CIDR6: 1
-# TOTAL: 861
+# TOTAL: 863
 
 # Google and Gemini. Covers Gemini web, AI Studio, Code Assist, Gemini API and Vertex AI.
 DOMAIN-SUFFIX,ai.studio
@@ -151,6 +151,7 @@ DOMAIN-SUFFIX,bumptop.net
 DOMAIN-SUFFIX,bumptop.org
 DOMAIN-SUFFIX,bumptunes.com
 DOMAIN-SUFFIX,campuslondon.com
+DOMAIN-SUFFIX,cdn.ampproject.org
 DOMAIN-SUFFIX,certificate-transparency.org
 DOMAIN-SUFFIX,charlestonroadregistry.com
 DOMAIN-SUFFIX,chrome
@@ -867,6 +868,7 @@ DOMAIN,qiao-cn.com
 DOMAIN,qpx.googleflights.net
 DOMAIN,recaptcha-cn.net
 DOMAIN,recaptcha.net
+DOMAIN,www.chromeexperiments.com
 DOMAIN,www.destinationurl.com
 DOMAIN,www.pxcc.com
 DOMAIN,www.recaptcha-cn.net

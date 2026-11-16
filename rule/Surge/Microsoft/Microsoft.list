@@ -4,9 +4,9 @@
 # MICROSOFT 365 ENDPOINTS: https://endpoints.office.com/
 # DOMAIN SOURCE: https://github.com/v2fly/domain-list-community/tree/93d681debd7abdf1c08c3b3891ca1d7da657ea23/data
 # DOMAIN: 19
-# DOMAIN-SUFFIX: 613
+# DOMAIN-SUFFIX: 615
 # PROCESS-NAME: 2
-# TOTAL: 634
+# TOTAL: 636
 
 # Microsoft 365, Copilot, OneDrive, Outlook, Teams and sign-in
 DOMAIN-SUFFIX,1drv.com
@@ -232,6 +232,7 @@ DOMAIN-SUFFIX,gearstactics.com
 DOMAIN-SUFFIX,gigjam.com
 DOMAIN-SUFFIX,gotcosmos.com
 DOMAIN-SUFFIX,graphengine.io
+DOMAIN-SUFFIX,groupme.com
 DOMAIN-SUFFIX,hdinsightservices.cn
 DOMAIN-SUFFIX,hololens.com
 DOMAIN-SUFFIX,hotmail
@@ -410,6 +411,7 @@ DOMAIN-SUFFIX,ms-studiosmedia.com
 DOMAIN-SUFFIX,ms365surfaceoffer.com
 DOMAIN-SUFFIX,msads.net
 DOMAIN-SUFFIX,msappproxy.cn
+DOMAIN-SUFFIX,msappproxy.net
 DOMAIN-SUFFIX,msauth.cn
 DOMAIN-SUFFIX,msauth.net
 DOMAIN-SUFFIX,msauthimages.cn
