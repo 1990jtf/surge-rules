@@ -8,6 +8,7 @@
 | --- | --- |
 | [Meta.list](rule/Surge/Meta/Meta.list) | Muse、Meta AI、Llama、Facebook、Instagram、Messenger、WhatsApp、Threads、Meta Quest 和常用媒体域名 |
 | [OpenAI.list](rule/Surge/OpenAI/OpenAI.list) | ChatGPT、Codex、OpenAI API、登录、实时连接和附件 |
+| [Claude.list](rule/Surge/Claude/Claude.list) | Claude 网页端、桌面端、Claude Code、Anthropic API、登录和更新 |
 
 ## 在 Surge 中添加 Meta 规则集
 
@@ -34,6 +35,16 @@ RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-rules/main/rule/Surge/O
 ```
 
 `chatgpt.com` 同时覆盖 ChatGPT 的 `ws.chatgpt.com` 和 Codex 的流式连接。Stripe、WorkOS 等共享域名，以及 ChatGPT Voice 使用的动态 IP，交由配置中的其他规则匹配。[OpenAI 网络要求](https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps)
+
+## 在 Surge 中添加 Claude 规则集
+
+在现有配置的 `[Rule]` 段加入以下一行，并使用已有的 `Claude` 策略组。
+
+```ini
+RULE-SET,https://raw.githubusercontent.com/1990jtf/surge-rules/main/rule/Surge/Claude/Claude.list,Claude
+```
+
+规则覆盖 Claude 的网页与 API、OAuth 和 SSO、桌面与原生 CLI 更新、Artifacts、浏览器桥接及 MCP Apps 内容。GitHub、npm、Google Cloud Storage 等共享服务由配置中的其他规则匹配。[Claude Desktop 网络要求](https://code.claude.com/docs/en/desktop#network-access-requirements) · [Claude Code 网络要求](https://code.claude.com/docs/en/network-config#network-access-requirements)
 
 ## 规则维护
 

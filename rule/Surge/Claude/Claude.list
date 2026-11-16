@@ -1,0 +1,15 @@
+# NAME: Claude
+# REPO: https://github.com/1990jtf/surge-rules
+# UPDATED: 2026-11-16
+# DOMAIN-SUFFIX: 6
+# TOTAL: 6
+
+# Claude web, desktop, API, sign-in and native updates
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,anthropic.com
+
+# Desktop previews, Artifacts, browser bridge and MCP Apps
+DOMAIN-SUFFIX,claude.app
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,claudemcpcontent.com
